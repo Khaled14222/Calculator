@@ -7,29 +7,33 @@ let operator = (Num1,op ,Num2) =>{
   let mathe
   if(op == '+'){
     mathe = Num1 + Num2;
+    results.textContent = mathe
     console.log(mathe)
     return mathe;
   } else if (op == '-'){
     mathe = Num1 - Num2;
+    results.textContent = mathe
     console.log(mathe)
     return mathe;
   } else if (op == 'x' || op == '*'){
     mathe = Num1 * Num2;
+    results.textContent = mathe
     console.log(mathe)
     return mathe;    
   } else if(op == '/'){
     mathe = Num1 / Num2;
+    results.textContent = mathe
     console.log(mathe)
     return mathe;
   }
-  
-  console.log(mathe)
-  return mathe;
 }
+
+
+let results = document.querySelector('.Numbers')
 
 
 let opo = prompt("Operator");
 let nam1 = Number(prompt("Numer 1"));
 let nam2 = Number(prompt("Numer 2"));
-
 operator(nam1,opo, nam2);
+
