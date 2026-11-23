@@ -29,9 +29,13 @@ let operator = (Num1,op ,Num2) =>{
 }
 
 
-let results = document.querySelector('.Numbers')
+let results = document.querySelector('.Numbers');
+let btn = document.querySelectorAll(".nume");
 
-
+function printNum(nana)
+{
+    results.textContent = nana;
+}
 let opo = prompt("Operator");
 let nam1 = Number(prompt("Numer 1"));
 let nam2 = Number(prompt("Numer 2"));
