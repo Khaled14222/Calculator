@@ -53,3 +53,11 @@ function printNum(nana)
     opo = '+';
     nam2 = '';
   };
+
+  document.getElementById('clear').onclick = function() {
+  results.textContent = `Enter your Numbers`
+
+    nam1 = '';
+    opo = false;
+    nam2 = '';
+  };
