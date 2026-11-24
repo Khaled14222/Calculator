@@ -19,7 +19,6 @@ let operator = (Num1,op ,Num2) =>{
     mathe = Num1 / Num2;
     return mathe;
   }
-  results.textContent = `${mathe}`;
 }
 
 
@@ -33,23 +32,29 @@ let nam2 = false;
 function printNum(nana)
 {
 
-  if(nam1 === false && opo == false&& /[0-9]/.test(nana)){
+  if(nam1 === false && opo == false){
     nam1 = Number(nana);
     console.log(nam1)
+    results.textContent = `${nam1}`;
   } else if(/[+\-/x]/.test(nana)){
     opo = nana;
     console.log(opo);
+    results.textContent = `${nam1} ${opo}`;
   } else if (nam2 === false && opo !== false){
     nam2 = Number(nana);
     console.log(nam2)
+    results.textContent = `${nam1} ${opo} ${nam2}`;
   }
   
-  results.textContent = `${nam1} ${opo} ${nam2}`;
   let answer = operator(nam1, opo, nam2);
 
   document.getElementById('equal').onclick = function() {
-   operator(nam1,opo,nam2);
-   results.textContent = `${answer}`
+  operator(nam1,opo,nam2);
+  results.textContent = `${answer}`
+
+    nam1 = false;
+    opo = false;
+    nam2 = false;
   };
 }
 //let opo = prompt("Operator");
