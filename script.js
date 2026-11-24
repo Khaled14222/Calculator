@@ -6,7 +6,7 @@ let operator = (Num1,op ,Num2) =>{
   } else if (op == '-'){
     mathe = Number(Num1) - Number(Num2);
     return mathe;
-  } else if (op == 'x' || op == '*'){
+  } else if ( op == `x`){
     mathe = Number(Num1) * Number(Num2);
     console.log(mathe)
     return mathe;    
@@ -49,8 +49,8 @@ function printNum(nana)
   let answer = operator(nam1, opo, nam2);
   results.textContent = `${answer}`
 
-    nam1 = answer;
-    opo = '+';
+    nam1 = '';
+    opo = false;
     nam2 = '';
   };
 
