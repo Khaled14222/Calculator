@@ -7,37 +7,59 @@ let operator = (Num1,op ,Num2) =>{
   let mathe
   if(op == '+'){
     mathe = Num1 + Num2;
-    results.textContent = mathe
-    console.log(mathe)
     return mathe;
   } else if (op == '-'){
     mathe = Num1 - Num2;
-    results.textContent = mathe
-    console.log(mathe)
     return mathe;
   } else if (op == 'x' || op == '*'){
     mathe = Num1 * Num2;
-    results.textContent = mathe
     console.log(mathe)
     return mathe;    
   } else if(op == '/'){
     mathe = Num1 / Num2;
-    results.textContent = mathe
-    console.log(mathe)
     return mathe;
   }
+  results.textContent = mathe;
 }
 
 
 let results = document.querySelector('.Numbers');
 let btn = document.querySelectorAll(".nume");
 
+let nam1 = false;
+let opo = false;
+let nam2 = false;
+
 function printNum(nana)
 {
-    results.textContent = nana;
-}
-let opo = prompt("Operator");
-let nam1 = Number(prompt("Numer 1"));
-let nam2 = Number(prompt("Numer 2"));
-operator(nam1,opo, nam2);
 
+  if(nam1 === false){
+    nam1 = Number(nana);
+    console.log(nam1)
+    nana =null;
+  } else if(opo === false && /[+\-/x]/.test(nana)){
+    opo = nana;
+    console.log(opo);
+    nana =null;
+  } else if (nam2 === false && opo !== false){
+    nam2 = Number(nana);
+    console.log(nam2)
+    nana =null;
+  }
+  
+  
+  operator(nam1,opo, nam2);  
+  results.textContent = `${nam1} ${opo} ${nam2}`;
+}
+//let opo = prompt("Operator");
+//let nam1 = Number(prompt("Numer 1"));
+//let nam2 = Number(prompt("Numer 2"));
+
+/**
+ * Print num function calls operator function inside of it so I can pass value into operator
+ * do a while loop to check if nam1 if it has any value if not then assign num1 to value
+ * then do another while loop to check if opo has any value if not then assign ValueOp another variable to it
+ * do the same with nam2
+ * 
+ * then do the math
+ */
