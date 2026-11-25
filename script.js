@@ -31,12 +31,12 @@ function printNum(nana)
     opo = nana;
     console.log(opo);
     results.textContent = `${nam1} ${opo}`;
-  } else if(opo == false){
+  } else if(opo == false && /[0-9]/.test(nana)){
     nam1 += nana;
     console.log(nam1)
     results.textContent = `${nam1}`;
   } 
-   else if (opo !== false){
+   else if (opo !== false && /[0-9]/.test(nana)){
     nam2  += nana;
 
     console.log(nam2)
